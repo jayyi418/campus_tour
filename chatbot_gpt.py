@@ -3,10 +3,10 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 
-load_dotenv() # .env 파일을 읽어서 환경변수 로드
-api_key = os.getenv("OPENAI_API_KEY") # .env 파일에 저장된 OPENAI_API_KEY 환경변수 로드
+load_dotenv() 
+api_key = os.getenv("OPENAI_API_KEY") 
 
-client = OpenAI(api_key=api_key) # OpenAI 클라이언트 객체를 만듬
+client = OpenAI(api_key=api_key) 
 # 장소 요약 목록
 place_list = """- 정문: 연세대학교의 정문은 캠퍼스를 상징하는 대표적인 입구입니다
 - 공학원: 공학대학의 중심 건물로, 여러 공학 계열 연구실이 위치해 있습니다
@@ -57,7 +57,7 @@ def build_gpt_prompt(user_input: str) -> str:
 """
     return prompt
 
-# GPT-4o 기반 추천 함수
+
 def recommend_place_with_gpt(user_input):
     prompt = build_gpt_prompt(user_input)
     completion = client.chat.completions.create(

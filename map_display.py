@@ -4,7 +4,6 @@ from streamlit_folium import st_folium
 from place_data import place_database 
 
 def render_map(place_list):
-    # 기본 지도 중심은 정문
     default = place_database.get("백양누리", {"lat": 37.56039, "lon": 126.93675})
     m = folium.Map(location=[default["lat"], default["lon"]], zoom_start=16)
 
